@@ -42,7 +42,7 @@
        <?php include 'includes/navbar.php'; ?>
         <!-- end header -->
         <!-- start page title -->
-            <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0" data-parallax-background-ratio="0.5" style="background-image: url(https://via.placeholder.com/1920x1080)">
+            <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0" data-parallax-background-ratio="0.5" style="background-image: url(images/demo-corporate-about-title-bg.jpg);">
                 <div class="opacity-extra-medium bg-blue-whale"></div>
                 <div class="container">
                     <div class="row align-items-center justify-content-center small-screen">
@@ -139,7 +139,7 @@
                                     <i class="bi bi-chat-text icon-extra-medium text-base-color"></i>
                                 </div>
                                 <div class="feature-box-content last-paragraph-no-margin text-dark-gray text-uppercase fs-15 fw-700 ls-05px">
-                                    Let's make something great work together. <a href="demo-corporate-contact.html" class="text-base-color text-decoration-line-bottom-medium border-1">Got a project in mind?</a>
+                                    Let's make something great work together. <a href="contact-us.php" class="text-base-color text-decoration-line-bottom-medium border-1">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -153,13 +153,13 @@
                     <div class="row justify-content-center align-items-center mb-3">
                         <div class="col-xl-5 col-lg-6 md-mb-14 sm-mb-18 xs-mb-23 position-relative" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 800, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <div class="w-75 sm-w-80" data-animation-delay="200" data-shadow-animation="true" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
-                                <img src="https://via.placeholder.com/600x710" alt="" class="border-radius-6px w-100">
+                                <img src="https://craftohtml.themezaa.com/images/demo-corporate-about-img-01.jpg" alt="" class="border-radius-6px w-100">
                                 <div class="position-absolute top-30px z-index-8 left-minus-90px lg-left-minus-25px sm-left-minus-0px lg-w-30">
                                     <img src="images/demo-corporate-about-01.png" alt="" />
                                 </div>
                             </div>
                             <div class="w-55 overflow-hidden position-absolute right-15px xs-w-55 bottom-minus-50px" data-shadow-animation="true" data-animation-delay="100" data-bottom-top="transform: translateY(20px)" data-top-bottom="transform: translateY(-20px)">
-                                <img src="https://via.placeholder.com/600x633" alt="" class="border-radius-6px box-shadow-quadruple-large w-100" />
+                                <img src="https://craftohtml.themezaa.com/images/demo-corporate-about-img-02.jpg" alt="" class="border-radius-6px box-shadow-quadruple-large w-100" />
                             </div>
                         </div>
                         <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-lg-start" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 800, "delay": 150, "staggervalue": 300, "easing": "easeOutQuad" }'>
@@ -169,21 +169,35 @@
                                     <div class="swiper-slide">
                                         <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company mission</span>
                                         <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">We help to business growth and solution.</h3>
-                                        <p class="w-95 xl-w-100">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been industry's standard dummy text ever since the when an unknown adipiscing elit do eiusmod tempor incididunt ut labore printer took and scrambled it specimen book.</p>
+                                        <p class="w-95 xl-w-100">Wave neer is an integrated BTL marketing, Marketing Research & Event Management agency in Delhi with a seasoned</p>
                                     </div>
                                     <!-- end text slider item -->
                                     <!-- start text slider item -->
                                     <div class="swiper-slide">
                                         <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company vision</span>
                                         <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">A business plan and performance ideas.</h3>
-                                        <p class="w-95 xl-w-100">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been industry's standard dummy text ever since the when an unknown adipiscing elit do eiusmod tempor incididunt ut labore printer took and scrambled it specimen book.</p>
+                                        <p class="w-95 xl-w-100">marketing professionals providing immersive interactive marketing solutions.</p>
                                     </div>
                                     <!-- end text slider item -->
                                     <!-- start text slider item -->
                                     <div class="swiper-slide">
                                         <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company value</span>
                                         <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">Make the creative solutions for business.</h3>
-                                        <p class="w-95 xl-w-100">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been industry's standard dummy text ever since the when an unknown adipiscing elit do eiusmod tempor incididunt ut labore printer took and scrambled it specimen book.</p>
+                                        <p class="w-95 xl-w-100">With its strong commitment to serve the clients with impeccable services every time, it has wide range of services for the  corporate and social events. With our forgoing journey since years, we have gain wide experience and has constantly  upgraded ourselves to meet the needs of this ever dynamic business environment. We have our in-house production Set  Up of Fabrication & Printing.</p>
+                                    </div>
+                                    <!-- end text slider item -->
+                                      <!-- start text slider item -->
+                                    <div class="swiper-slide">
+                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company value</span>
+                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">Make the creative solutions for business.</h3>
+                                        <p class="w-95 xl-w-100">We love designing creative events and are renowned for unique styling ideas, unusual venue sourcing and going the extra</p>
+                                    </div>
+                                    <!-- end text slider item -->
+                                       <!-- start text slider item -->
+                                    <div class="swiper-slide">
+                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company value</span>
+                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">Make the creative solutions for business.</h3>
+                                        <p class="w-95 xl-w-100">Wesolve theproblemof generating buzz by giving experiences that are novel, for brands to engage audiences.</p>
                                     </div>
                                     <!-- end text slider item -->
                                 </div> 
@@ -200,150 +214,8 @@
                 <img src="https://via.placeholder.com/655x590" class="position-absolute bottom-minus-50px right-minus-50px z-index-minus-1" data-bottom-top="transform: rotate(0deg) translateY(0)" data-top-bottom="transform:rotate(-15deg) translateY(0)" alt=""/>
             </section>
             <!-- end section -->
-            <!-- start section -->
-            <section class="bg-gradient-quartz-white border-radius-6px"> 
-                <div class="container">
-                    <div class="row justify-content-center mb-3">
-                        <div class="col-xl-5 col-md-7 col-lg-6 col-sm-8 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <h3 class="text-dark-gray fw-700 ls-minus-1px">Committed staff are ready to help you</h3>
-                        </div>
-                    </div>
-                    <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px md-mb-30px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Jeremy dupont</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Director</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.twitter.com/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-twitter icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->  
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px md-mb-30px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Jessica dover</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Founder</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.linkedin.com/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-linkedin-in icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->   
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px xs-mb-30px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Matthew taylor</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Manager</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.behance.net/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-behance icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->   
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Johncy parker</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Manager</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.facebook.com/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-facebook-f icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->   
-                    </div>
-                </div>
-            </section>
-            <!-- end section -->
-            <!-- start section -->
-            <section class="pt-0">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-5 col-lg-6 text-center mb-1" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <span class="text-dark-gray fw-700 fs-15 text-uppercase border-1 pb-5px border-bottom border-color-extra-medium-gray text-dark-gray">Join the 10,000+ companies using crafto</span>
-                        </div>
-                    </div>
-                    <div class="row position-relative clients-style-08 mt-25px" data-anime='{ "translateX": [0, 0], "opacity": [0,1], "duration": 800, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <div class="col swiper text-center feather-shadow" data-slider-options='{ "slidesPerView": 2, "spaceBetween":0, "speed": 3000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false, "pauseOnMouseEnter": false}, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 5 }, "768": { "slidesPerView": 3 }, "576": { "slidesPerView": 2 } }, "effect": "slide" }'>
-                            <div class="swiper-wrapper marquee-slide">
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-walmart-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-netflix-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-invision-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-yahoo-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-amazon-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-walmart-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-netflix-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-invision-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-yahoo-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-invision-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                            </div> 
-                        </div>  
-                    </div>
-                </div>
-            </section>
-            <!-- end section -->
+           
+        
            
         <!-- start footer -->
        <?php include 'includes/footer.php'; ?>

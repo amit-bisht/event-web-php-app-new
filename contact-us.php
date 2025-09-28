@@ -127,7 +127,7 @@
                             <div class="map-overlay-card" style="position:absolute;top:28px;left:50%;transform:translateX(-50%);background:#fff;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:16px 18px 14px 18px;min-width:220px;max-width:90%;z-index:2;text-align:center;">
                                 <div style="font-size:1.05rem;font-weight:600;color:#232b38;margin-bottom:4px;">WaveNeer Office</div>
                                 <div style="color:#6c757d;font-size:0.92rem;margin-bottom:12px;line-height:1.4;">C4/23. Keshav. Puram. Near. By Malhotra clinic. Keshav. Puram.<br>110059, India</div>
-                                <a href="https://maps.app.goo.gl/vPJeGnjA1gXCpmB68" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;background:#232b38;color:#fff;border-radius:4px;font-weight:500;text-decoration:none;box-shadow:0 2px 8px rgba(62,49,203,0.08);font-size:0.98rem;letter-spacing:0.5px;">VIEW LARGER MAP</a>
+                                <a href="https://maps.app.goo.gl/VR4d3TY4rP6Gvvue6?g_st=ipc" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;background:#232b38;color:#fff;border-radius:4px;font-weight:500;text-decoration:none;box-shadow:0 2px 8px rgba(62,49,203,0.08);font-size:0.98rem;letter-spacing:0.5px;">VIEW LARGER MAP</a>
                                 <div class="map-blink-outer"></div>
                                 <div class="map-blink-inner"></div>
                 <style>
