@@ -27,39 +27,41 @@ $(document).ready(function () {
         }
         $('.spinner-container').show();
         $.ajax({
-            type: "POST",
-            url: "send-email.php",
-            data: formData,
-            dataType: "json", // Expect JSON response
-            success: function (response) {
-                console.log(response)
-                if (response.status === "success") {
-                    $('.spinner-container').hide();
-                    Swal.fire(
-                        'Thank you!',
-                        'Your message has been successfully sent.',
-                        'success'
-                    )
-                    $("#contact-form")[0].reset();
-                } else {
-                    $('.spinner-container').hide();
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Cannot Submit Form!'
+    type: "POST",
+    url: "send-email.php",
+    data: formData,
+    dataType: "json",
+    success: function (response) {
+        console.log(response);
+        if (response.status === "success") {
+            $('.spinner-container').hide();
+            Swal.fire('Thank you!', 'Your message has been successfully sent.', 'success');
+            $("#contact-form")[0].reset();
+        } else {
+            $('.spinner-container').hide();
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Cannot Submit Form!'
+            });
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        $('.spinner-container').hide();
 
-                    })
-                }
-            },
-            error: function () {
-                $('.spinner-container').hide();
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!'
+        console.error("AJAX Error Details:");
+        console.error("Status Code:", jqXHR.status);           // e.g. 404, 500
+        console.error("Response Text:", jqXHR.responseText);   // Any server error message
+        console.error("Text Status:", textStatus);             // 'timeout', 'error', etc.
+        console.error("Error Thrown:", errorThrown);           // 'Not Found', 'Internal Server Error'
 
-                })
-            }
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `Request failed: ${textStatus} - ${errorThrown}`
         });
+    }
+});
+
     });
 });
