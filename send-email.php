@@ -12,12 +12,50 @@ function write_log($msg) {
     file_put_contents($logFile, "[$date] $msg\n", FILE_APPEND);
 }
 
-$mail = new PHPMailer(true);
+// Initialize response array
 $response = array();
+
+// Validate and sanitize input data
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    $response = ['status' => 'error', 'message' => 'Only POST requests allowed'];
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit;
+}
+
+// Check required fields
+$required_fields = ['username', 'email'];
+foreach ($required_fields as $field) {
+    if (empty($_POST[$field]) || trim($_POST[$field]) === '') {
+        $response = ['status' => 'error', 'message' => "Field '$field' is required"];
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        exit;
+    }
+}
+
+// Sanitize input data
+$username = trim(htmlspecialchars($_POST['username']));
+$email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+$mobileno = isset($_POST['mobileno']) ? trim(htmlspecialchars($_POST['mobileno'])) : '';
+$company = isset($_POST['company']) ? trim(htmlspecialchars($_POST['company'])) : '';
+$message = isset($_POST['message']) ? trim(htmlspecialchars($_POST['message'])) : '';
+
+// Validate email format
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $response = ['status' => 'error', 'message' => 'Invalid email format'];
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit;
+}
+
+write_log("Processing email request for: $username ($email)");
+
+$mail = new PHPMailer(true);
 
 try {
     // Debug output from PHPMailer
-    $mail->SMTPDebug = 2; // 2 = client & server messages
+    $mail->SMTPDebug = 0; // Set to 2 for debugging, 0 for production
     $mail->Debugoutput = function ($str, $level) {
         write_log("SMTP Debug [$level]: $str");
     };
@@ -28,28 +66,34 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = 'itadmin@waveneer.com';
     $mail->Password = 'rJkwwpP$XT&2@Admin';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // safer than 'tls' string
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
+    
+    // Set timeout
+    $mail->Timeout = 30;
 
     write_log("Attempting SMTP connection...");
 
     // Sender & Recipient
     $mail->setFrom('itadmin@waveneer.com', 'Waveneer IT Admin');
-    $mail->addAddress('Waveneer.online@gmail.com', $_POST['username']);
+    $mail->addAddress('Waveneer.online@gmail.com', 'Waveneer Team');
+    
+    // Reply to sender's email
+    $mail->addReplyTo($email, $username);
 
     $datetime = date('Y-m-d H:i:s');
-    $mail->Subject = "New Inquiry submitted on {$datetime}";
+    $mail->Subject = "New Inquiry from $username - $datetime";
 
     $mail->isHTML(true);
     $mail->Body = "
         <p>Hello Team,</p>
         <p>A new inquiry has been submitted.</p>
-        <p><strong>Name:</strong> {$_POST['username']}</p>
-        <p><strong>Email:</strong> {$_POST['email']}</p>
-        <p><strong>Phone:</strong> {$_POST['mobileno']}</p>
-        <p><strong>Company:</strong> {$_POST['company']}</p>
-        <p><strong>Message:</strong> {$_POST['message']}</p>
-        <p>Submitted on: {$datetime}</p>
+        <p><strong>Name:</strong> $username</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Phone:</strong> $mobileno</p>
+        <p><strong>Company:</strong> $company</p>
+        <p><strong>Message:</strong> $message</p>
+        <p>Submitted on: $datetime</p>
     ";
 
     $mail->send();
@@ -58,8 +102,9 @@ try {
 } catch (Exception $e) {
     // Capture both PHPMailer ErrorInfo and Exception
     $errorDetail = "Mailer Error: " . $mail->ErrorInfo . " | Exception: " . $e->getMessage();
-    $response = ['status' => 'error', 'message' => $errorDetail];
-    write_log(" Email failed. Details: " . $errorDetail);
+    $response = ['status' => 'error', 'message' => 'Failed to send email. Please try again later.'];
+    write_log("Email failed for $username ($email). Details: " . $errorDetail);
+    write_log("Stack trace: " . $e->getTraceAsString());
 }
 
 // JSON Response
