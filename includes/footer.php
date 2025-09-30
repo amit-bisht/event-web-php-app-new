@@ -1,6 +1,6 @@
- <!-- start footer -->
+ <!--start footer -->
         <footer>
-            <nav style="padding:90px 0;" class="navbar navbar-expand-lg header-light bg-white disable-fixed">
+            <nav style="padding:10px 0;" class="navbar navbar-expand-lg header-light bg-white disable-fixed">
                 <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between">
                     <div class="footer-social d-flex align-items-center gap-3 order-1">
                         <a href="https://www.facebook.com/profile.php?id=61578624544341" target="_blank"
@@ -31,12 +31,12 @@
                             <li class="nav-item"><a href="about-us.php" class="nav-link">About us</a></li>
                             <li class="nav-item"><a href="why-us.php" class="nav-link">Why us?</a></li>
                             <li class="nav-item"><a href="network.php" class="nav-link">Our Network</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Advertise</a></li>
+                             <!-- <li class="nav-item"><a href="#" class="nav-link">Advertise</a></li>  -->
 
                         </ul>
                     </div>
                     <div class="footer-contact ms-20px order-3">
-                        <a href="#"
+                        <a href="contact-us.php"
                             class="btn btn-rounded btn-transparent-light-gray border-1 btn-medium btn-switch-text text-transform-none">
                             <span>
                                 <span class="btn-double-text fw-600"

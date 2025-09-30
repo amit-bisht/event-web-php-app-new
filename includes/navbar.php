@@ -26,7 +26,7 @@
                                 <li class="nav-item"><a href="about-us.php" class="nav-link">About us</a></li>
                                 <li class="nav-item"><a href="why-us.php" class="nav-link">Why us?</a></li>
                                 <li class="nav-item"><a href="network.php" class="nav-link">Our Network</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link">Advertise</a></li>
+                                <!-- <li class="nav-item"><a href="#" class="nav-link">Advertise</a></li> -->
                             </ul>
                         </div>
                     </div>

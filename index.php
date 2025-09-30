@@ -187,7 +187,7 @@
                                             data-textAlign="['inherit','inherit','inherit','inherit']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[75,70,65,60]"
                                             data-paddingbottom="[0,0,0,0]" data-paddingleft="[45,35,30,30]">
-                                            <a href="#"
+                                            <a href="contact-us.php"
                                                 class="btn btn-extra-large get-started-btn btn-rounded with-rounded btn-gradient-flamingo-amethyst-green btn-box-shadow">More
                                                 Info<span class="bg-white text-base-color"><i
                                                         class="fa-solid fa-arrow-right"></i></span></a>
@@ -377,7 +377,7 @@
                                             data-textAlign="['inherit','inherit','inherit','inherit']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[75,70,65,60]"
                                             data-paddingbottom="[0,0,0,0]" data-paddingleft="[45,35,30,30]">
-                                            <a href="#"
+                                            <a href="contact-us.php"
                                                 class="btn btn-extra-large get-started-btn btn-rounded with-rounded btn-gradient-flamingo-amethyst-green btn-box-shadow">More
                                                 Info<span class="bg-white text-base-color"><i
                                                         class="fa-solid fa-arrow-right"></i></span></a>
@@ -567,7 +567,7 @@
                                             data-textAlign="['inherit','inherit','inherit','inherit']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[75,70,65,60]"
                                             data-paddingbottom="[0,0,0,0]" data-paddingleft="[45,35,30,30]">
-                                            <a href="#"
+                                            <a href="contact-us.php"
                                                 class="btn btn-extra-large get-started-btn btn-rounded with-rounded btn-gradient-flamingo-amethyst-green btn-box-shadow">More
                                                 Info<span class="bg-white text-base-color"><i
                                                         class="fa-solid fa-arrow-right"></i></span></a>
@@ -1304,7 +1304,7 @@
                     data-anime='{ "el": "childs", "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                     <div class="col text-center">
                         <div>
-                            <a target="_new" href="https://forms.gle/2wS1AnueQUjHsHsk6"
+                            <a target="_new" href="https://forms.gle/uwUkWpGEW6GdmPi1A"
                                 class="btn btn-large btn-gradient-flamingo-amethyst-green btn-box-shadow btn-rounded">
                                 <span>
                                     <span class="btn-text">Give your valuable feedback</span>
