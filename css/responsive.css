@@ -1,15 +1,3 @@
-/* -------------------------------------------------------
-
-    Theme Name: Crafto - The Multipurpose HTML5 Template
-    Theme URL: https://craftohtml.themezaa.com/
-    Description: Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.
-    Author: ThemeZaa - https://www.themezaa.com/
-    Author ThemeForest URL: https://themeforest.net/user/themezaa
-    Copyright(c) 2024 themezaa.com
-    Version: 2.0
-
-------------------------------------------------------- */
-/* Bootstrap overwrite css */
 @media (min-width: 1400px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1220px;
@@ -21639,5 +21627,99 @@
   .footer-navbar li .nav-link {
     padding-left: 0.8rem;
     padding-right: 0.8rem;
+  }
+  
+  /* Mobile Footer Responsive Styles - Only apply on mobile */
+  footer .container-fluid {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  
+  footer .footer-social {
+    margin-bottom: 20px;
+    justify-content: center !important;
+  }
+  
+  footer .footer-menu {
+    margin-bottom: 20px;
+    width: 100% !important;
+  }
+  
+  footer .footer-menu .navbar-nav {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  
+  footer .footer-menu .nav-item {
+    margin-bottom: 8px;
+  }
+  
+  footer .footer-menu .nav-link {
+    padding: 8px 12px !important;
+    font-size: 14px;
+  }
+  
+  footer .footer-contact {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  
+  footer .footer-contact .btn {
+    width: auto;
+    min-width: 140px;
+    padding: 12px 20px;
+  }
+  
+  /* Social Icons Mobile Adjustments */
+  footer .footer-social .social-icon {
+    width: 45px !important;
+    height: 45px !important;
+    margin-right: 15px;
+  }
+  
+  footer .footer-social .social-icon:last-child {
+    margin-right: 0;
+  }
+  
+  footer .footer-social .social-icon i {
+    font-size: 18px !important;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 575px) {
+  footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  footer .footer-menu .navbar-nav {
+    gap: 8px !important;
+  }
+  
+  footer .footer-menu .nav-link {
+    padding: 6px 10px !important;
+    font-size: 13px;
+  }
+  
+  footer .footer-contact .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  footer .footer-social {
+    margin-bottom: 25px;
+  }
+  
+  footer .footer-social .social-icon {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 12px;
+  }
+  
+  footer .footer-social .social-icon i {
+    font-size: 16px !important;
   }
 }
