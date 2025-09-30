@@ -29,6 +29,118 @@
     <link rel="stylesheet" href="demos/corporate/corporate.css" />
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <style>
+        .container.overlap-section.position-relative.z-index-2 {
+                margin-top: -10.338px !important;
+
+        }
+        .about-hero-section {
+            background: linear-gradient(135deg, rgba(255,147,1,0.9), rgba(33,150,243,0.8)), url('images/demo-corporate-about-title-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: rgba(255,147,1,0.2);
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #ff9301, #ffb74d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #e8840a, #ff9301);
+        }
+        .stats-counter {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ff9301;
+            line-height: 1;
+        }
+        .company-story-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+        .story-highlight {
+            background: linear-gradient(45deg, rgba(255,147,1,0.1), rgba(33,150,243,0.1));
+            border-left: 4px solid #ff9301;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .about-cta-section {
+            background: linear-gradient(135deg, #ff9301, #2196f3);
+            position: relative;
+            overflow: hidden;
+        }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .floating-elements::before {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .floating-elements::after {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #ff9301, #2196f3, #ff9301);
+            margin: 3rem 0;
+            border-radius: 2px;
+        }
+        .text-highlight {
+            background: linear-gradient(45deg, #ff9301, #2196f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        .slide-content {
+            padding: 2rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid #ff9301;
+        }
+    </style>
 </head>
 
 <body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#242E45">
@@ -42,14 +154,16 @@
        <?php include 'includes/navbar.php'; ?>
         <!-- end header -->
         <!-- start page title -->
-            <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0" data-parallax-background-ratio="0.5" style="background-image: url(images/demo-corporate-about-title-bg.jpg);">
-                <div class="opacity-extra-medium bg-blue-whale"></div>
+            <section class="about-hero-section top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0" data-parallax-background-ratio="0.5">
+                <div class="floating-elements"></div>
                 <div class="container">
                     <div class="row align-items-center justify-content-center small-screen">
-                        <div class="col-lg-8 position-relative text-center page-title-extra-large" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">About us</h1>
+                        <div class="col-lg-10 position-relative text-center page-title-extra-large" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <h1 class="m-auto text-white text-shadow-double-large fw-800 ls-minus-2px mb-3">Elevating Brands Through <span class="text-highlight">Immersive Experiences</span></h1>
+                            <p class="text-white fs-18 fw-400 mb-4 w-80 mx-auto opacity-9">Integrated BTL Marketing, Research & Event Management Agency delivering impeccable services with seasoned marketing professionals</p>
+                            <a href="#down-section" class="btn btn-large btn-white btn-round-edge fw-600 text-dark-gray">Discover Our Story</a>
                         </div>
-                        <div class="down-section text-center" data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <div class="down-section text-center mt-4" data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <a href="#down-section" class="section-link">
                                 <div class="text-white">
                                     <i class="feather icon-feather-chevron-down icon-very-medium"></i>
@@ -61,85 +175,136 @@
             </section>
             <!-- end page title -->
             <!-- start section -->
-            <section id="down-section" class="border-bottom border-color-extra-medium-gray">
+            <section id="down-section" class="company-story-section">
                 <div class="container overlap-gap-section"> 
-                    <div class="row align-items-end justify-content-center mb-5 md-mb-40px text-center text-md-start">                    
-                        <div class="col-xl-5 col-lg-6 col-md-10 md-mb-20px text-center text-lg-start" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">About company</span>
-                            <h3 class="text-dark-gray fw-700 mb-0 ls-minus-1px">Powerful agency for corporate business.</h3>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-10 offset-xl-1 text-center text-lg-start last-paragraph-no-margin">
-                            <p class="w-90 xl-w-100" data-anime='{ "el": "lines", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>We strive to develop real-world web solutions that are ideal for small to large projects with bespoke project requirements. we compelling web, <span class="fw-600 text-dark-gray text-decoration-line-bottom">which are the right-fit for your target.</span></p>
+                    <div class="row align-items-center justify-content-center mb-6 text-center">                    
+                        <div class="col-lg-10" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-13 lh-42px fw-700 border-radius-100px bg-gradient-orange-sky-blue d-inline-block">Who We Are</span>
+                            <h2 class="text-dark-gray fw-800 ls-minus-2px mb-4">Crafting <span class="text-highlight">Immersive Marketing Solutions</span> Since Years</h2>
+                            <div class="section-divider w-50 mx-auto"></div>
                         </div>
                     </div>
-                    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 row-cols-sm-2 justify-content-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden md-mb-20px">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Trusted company</span>
-                                    <p>We deliver email marketing campaigns to audience.</p>
-                                </div>
+                    
+                    <div class="row align-items-center mb-6">
+                        <div class="col-lg-6 mb-4 mb-lg-0" data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 800, "delay": 0, "easing": "easeOutQuad" }'>
+                            <div class="story-highlight">
+                                <h4 class="text-dark-gray fw-700 mb-3">Our Foundation</h4>
+                                <p class="fs-16 lh-28 mb-0">WaveNeer is an <strong>integrated BTL marketing, Marketing Research & Event Management agency</strong> in Delhi with seasoned marketing professionals providing immersive interactive marketing solutions.</p>
+                            </div>
+                            <p class="fs-16 lh-28 text-medium-gray">With our strong commitment to serve clients with <strong>impeccable services every time</strong>, we offer a wide range of services for corporate and social events. Through our journey over the years, we have gained extensive experience and constantly upgraded ourselves to meet the needs of this ever-dynamic business environment.</p>
+                        </div>
+                        <div class="col-lg-6" data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 800, "delay": 200, "easing": "easeOutQuad" }'>
+                            <div class="story-highlight">
+                                <h4 class="text-dark-gray fw-700 mb-3">Our Capabilities</h4>
+                                <p class="fs-16 lh-28 mb-3">We have our <strong>in-house production setup</strong> for Fabrication & Printing, ensuring quality control and timely delivery.</p>
+                                <p class="fs-16 lh-28 mb-0">We love designing creative events and are renowned for <strong>unique styling ideas, unusual venue sourcing</strong> and going the extra mile to ensure you get the perfect event.</p>
                             </div>
                         </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden md-mb-20px">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Professional work</span>
-                                    <p>We also help our clients with social media strategy.</p>
-                                </div>
+                    </div>
+                    
+                    <!-- Statistics Section -->
+                    <div class="row text-center mb-6" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="feature-card text-center">
+                                <div class="stats-counter">100+</div>
+                                <h5 class="text-dark-gray fw-600 mb-0">Cities Covered</h5>
+                                <p class="text-medium-gray fs-14 mb-0">Nationwide Presence</p>
                             </div>
                         </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden xs-mb-20px">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Award winning</span>
-                                    <p>We believe in challenges so we have made challenges.</p>
-                                </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="feature-card text-center">
+                                <div class="stats-counter">1000+</div>
+                                <h5 class="text-dark-gray fw-600 mb-0">Projects Completed</h5>
+                                <p class="text-medium-gray fs-14 mb-0">Successful Campaigns</p>
                             </div>
                         </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Help any time</span>
-                                    <p>We never fail for support for your business anywhere.</p>
-                                </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="feature-card text-center">
+                                <div class="stats-counter">24</div>
+                                <h5 class="text-dark-gray fw-600 mb-0">B2B Partners</h5>
+                                <p class="text-medium-gray fs-14 mb-0">Strategic Alliances</p>
                             </div>
                         </div>
-                        <!-- end features box item -->
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="feature-card text-center">
+                                <div class="stats-counter">5+</div>
+                                <h5 class="text-dark-gray fw-600 mb-0">Years Experience</h5>
+                                <p class="text-medium-gray fs-14 mb-0">Industry Expertise</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Our Core Services -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8 text-center mb-5" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <h3 class="text-dark-gray fw-800 ls-minus-1px mb-3">Our <span class="text-highlight">Core Services</span></h3>
+                            <p class="text-medium-gray fs-16 w-80 mx-auto">We solve the problem of generating buzz by giving experiences that are novel, helping brands engage audiences effectively.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 justify-content-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        <!-- BTL Marketing -->
+                        <div class="col mb-4">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon">
+                                    <i class="bi bi-megaphone-fill text-white fs-24"></i>
+                                </div>
+                                <h5 class="text-dark-gray fw-700 mb-3">BTL Marketing</h5>
+                                <p class="text-medium-gray fs-15 lh-26 mb-0">Integrated below-the-line marketing solutions that create direct connections with your target audience.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Marketing Research -->
+                        <div class="col mb-4">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon">
+                                    <i class="bi bi-graph-up-arrow text-white fs-24"></i>
+                                </div>
+                                <h5 class="text-dark-gray fw-700 mb-3">Marketing Research</h5>
+                                <p class="text-medium-gray fs-15 lh-26 mb-0">Comprehensive market analysis and consumer insights to drive strategic decision-making.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Management -->
+                        <div class="col mb-4">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon">
+                                    <i class="bi bi-calendar-event text-white fs-24"></i>
+                                </div>
+                                <h5 class="text-dark-gray fw-700 mb-3">Event Management</h5>
+                                <p class="text-medium-gray fs-15 lh-26 mb-0">End-to-end event planning and execution for corporate and social gatherings.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Creative Solutions -->
+                        <div class="col mb-4">
+                            <div class="feature-card text-center">
+                                <div class="feature-icon">
+                                    <i class="bi bi-palette-fill text-white fs-24"></i>
+                                </div>
+                                <h5 class="text-dark-gray fw-700 mb-3">Creative Solutions</h5>
+                                <p class="text-medium-gray fs-15 lh-26 mb-0">Innovative design concepts and unique styling ideas for memorable brand experiences.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
             <!-- end section -->
             <!-- start section --> 
-            <section class="py-0 sm-pt-50px" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                <div class="container overlap-section">
+            <section class="about-cta-section py-5" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                <div class="floating-elements"></div>
+                <div class="container overlap-section position-relative z-index-2">
                     <div class="row justify-content-center g-0">
-                        <div class="col-auto text-center last-paragraph-no-margin icon-with-text-style-08 pt-20px pb-20px ps-8 pe-8 md-ps-30px md-pe-30px bg-white border border-color-extra-medium-gray box-shadow-medium-bottom border-radius-100px xs-border-radius-10px">
-                            <div class="feature-box feature-box-left-icon-middle overflow-hidden">
-                                <div class="feature-box-icon me-10px">
-                                    <i class="bi bi-chat-text icon-extra-medium text-base-color"></i>
-                                </div>
-                                <div class="feature-box-content last-paragraph-no-margin text-dark-gray text-uppercase fs-15 fw-700 ls-05px">
-                                    Let's make something great work together. <a href="contact-us.php" class="text-base-color text-decoration-line-bottom-medium border-1">Contact Us</a>
+                        <div class="col-lg-8 text-center">
+                            <div class="bg-white border-radius-12px p-5 box-shadow-large">
+                                <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                                    <div class="feature-box-icon me-15px">
+                                        <i class="bi bi-chat-text icon-extra-medium text-base-color"></i>
+                                    </div>
+                                    <div class="feature-box-content last-paragraph-no-margin text-dark-gray">
+                                        <h4 class="fw-800 mb-2">Ready to Create Something Amazing?</h4>
+                                        <p class="fs-16 mb-3 text-medium-gray">Let's make something great work together and elevate your brand experience.</p>
+                                        <a href="contact-us.php" class="btn btn-large btn-dark-gray btn-round-edge fw-600">Contact Us</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -148,58 +313,55 @@
             </section>
             <!-- end section -->
             <!-- start section -->
-            <section class="position-relative overflow-hidden">
+            <section class="position-relative overflow-hidden py-6">
                 <div class="container">
-                    <div class="row justify-content-center align-items-center mb-3">
-                        <div class="col-xl-5 col-lg-6 md-mb-14 sm-mb-18 xs-mb-23 position-relative" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 800, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-xl-5 col-lg-6 mb-5 mb-lg-0 position-relative" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 800, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <div class="w-75 sm-w-80" data-animation-delay="200" data-shadow-animation="true" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
-                                <img src="https://craftohtml.themezaa.com/images/demo-corporate-about-img-01.jpg" alt="" class="border-radius-6px w-100">
-                                <div class="position-absolute top-30px z-index-8 left-minus-90px lg-left-minus-25px sm-left-minus-0px lg-w-30">
-                                    <img src="images/demo-corporate-about-01.png" alt="" />
-                                </div>
+                                <img src="images/img_event_One.png" alt="WaveNeer Events" class="border-radius-12px w-100 box-shadow-large">
                             </div>
                             <div class="w-55 overflow-hidden position-absolute right-15px xs-w-55 bottom-minus-50px" data-shadow-animation="true" data-animation-delay="100" data-bottom-top="transform: translateY(20px)" data-top-bottom="transform: translateY(-20px)">
-                                <img src="https://craftohtml.themezaa.com/images/demo-corporate-about-img-02.jpg" alt="" class="border-radius-6px box-shadow-quadruple-large w-100" />
+                                <img src="images/img_event_Two.png" alt="WaveNeer Team" class="border-radius-12px box-shadow-extra-large w-100" />
                             </div>
                         </div>
                         <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-lg-start" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 800, "delay": 150, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <div class="swiper position-relative magic-cursor" data-slider-options='{ "autoHeight": true, "loop": true, "allowTouchMove": true, "autoplay": { "delay": 4000, "disableOnInteraction": false }, "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }, "effect": "slide" }'>
-                                <div class="swiper-wrapper mb-10px">
-                                    <!-- start text slider item -->
+                            <div class="swiper position-relative magic-cursor" data-slider-options='{ "autoHeight": true, "loop": true, "allowTouchMove": true, "autoplay": { "delay": 5000, "disableOnInteraction": false }, "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }, "effect": "slide" }'>
+                                <div class="swiper-wrapper mb-4">
+                                    <!-- Our Mission -->
                                     <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company mission</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">We help to business growth and solution.</h3>
-                                        <p class="w-95 xl-w-100">Wave neer is an integrated BTL marketing, Marketing Research & Event Management agency in Delhi with a seasoned</p>
+                                        <div class="slide-content">
+                                            <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-13 lh-42px fw-700 border-radius-100px bg-gradient-orange-sky-blue d-inline-block">Our Mission</span>
+                                            <h3 class="text-dark-gray fw-800 ls-minus-1px mb-20px">Delivering Impeccable Services Every Time</h3>
+                                            <p class="fs-16 lh-28 text-medium-gray">WaveNeer is an integrated BTL marketing, Marketing Research & Event Management agency in Delhi with seasoned marketing professionals providing immersive interactive marketing solutions.</p>
+                                        </div>
                                     </div>
-                                    <!-- end text slider item -->
-                                    <!-- start text slider item -->
+                                    
+                                    <!-- Our Vision -->
                                     <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company vision</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">A business plan and performance ideas.</h3>
-                                        <p class="w-95 xl-w-100">marketing professionals providing immersive interactive marketing solutions.</p>
+                                        <div class="slide-content">
+                                            <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-13 lh-42px fw-700 border-radius-100px bg-gradient-orange-sky-blue d-inline-block">Our Vision</span>
+                                            <h3 class="text-dark-gray fw-800 ls-minus-1px mb-20px">Evolving with Dynamic Business Environment</h3>
+                                            <p class="fs-16 lh-28 text-medium-gray">With our forgoing journey over the years, we have gained wide experience and constantly upgraded ourselves to meet the needs of this ever-dynamic business environment. We have our in-house production setup of Fabrication & Printing.</p>
+                                        </div>
                                     </div>
-                                    <!-- end text slider item -->
-                                    <!-- start text slider item -->
+                                    
+                                    <!-- Our Values -->
                                     <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company value</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">Make the creative solutions for business.</h3>
-                                        <p class="w-95 xl-w-100">With its strong commitment to serve the clients with impeccable services every time, it has wide range of services for the  corporate and social events. With our forgoing journey since years, we have gain wide experience and has constantly  upgraded ourselves to meet the needs of this ever dynamic business environment. We have our in-house production Set  Up of Fabrication & Printing.</p>
+                                        <div class="slide-content">
+                                            <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-13 lh-42px fw-700 border-radius-100px bg-gradient-orange-sky-blue d-inline-block">Our Values</span>
+                                            <h3 class="text-dark-gray fw-800 ls-minus-1px mb-20px">Creative Excellence & Unique Experiences</h3>
+                                            <p class="fs-16 lh-28 text-medium-gray">We love designing creative events and are renowned for unique styling ideas, unusual venue sourcing, and going the extra mile to make sure you get the perfect event.</p>
+                                        </div>
                                     </div>
-                                    <!-- end text slider item -->
-                                      <!-- start text slider item -->
+                                    
+                                    <!-- Our Approach -->
                                     <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company value</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">Make the creative solutions for business.</h3>
-                                        <p class="w-95 xl-w-100">We love designing creative events and are renowned for unique styling ideas, unusual venue sourcing and going the extra</p>
+                                        <div class="slide-content">
+                                            <span class="ps-25px pe-25px mb-20px text-uppercase text-white fs-13 lh-42px fw-700 border-radius-100px bg-gradient-orange-sky-blue d-inline-block">Our Approach</span>
+                                            <h3 class="text-dark-gray fw-800 ls-minus-1px mb-20px">Solving Brand Engagement Challenges</h3>
+                                            <p class="fs-16 lh-28 text-medium-gray">We solve the problem of generating buzz by giving experiences that are novel, helping brands engage audiences through innovative and immersive marketing solutions.</p>
+                                        </div>
                                     </div>
-                                    <!-- end text slider item -->
-                                       <!-- start text slider item -->
-                                    <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company value</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">Make the creative solutions for business.</h3>
-                                        <p class="w-95 xl-w-100">Wesolve theproblemof generating buzz by giving experiences that are novel, for brands to engage audiences.</p>
-                                    </div>
-                                    <!-- end text slider item -->
                                 </div> 
                                 <div class="d-flex justify-content-center justify-content-lg-start">
                                     <!-- start slider navigation -->
@@ -211,7 +373,6 @@
                         </div>
                     </div>
                 </div>
-                <img src="https://via.placeholder.com/655x590" class="position-absolute bottom-minus-50px right-minus-50px z-index-minus-1" data-bottom-top="transform: rotate(0deg) translateY(0)" data-top-bottom="transform:rotate(-15deg) translateY(0)" alt=""/>
             </section>
             <!-- end section -->
            

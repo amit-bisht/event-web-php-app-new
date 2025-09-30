@@ -17,10 +17,6 @@
     <!-- google fonts preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- slider revolution CSS files -->
-    <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
     <!-- style sheets and font icons  -->
     <link rel="stylesheet" href="css/vendors.min.css" />
     <link rel="stylesheet" href="css/icon.min.css" />
@@ -29,6 +25,130 @@
     <link rel="stylesheet" href="demos/corporate/corporate.css" />
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <style>
+        .network-hero {
+            background: linear-gradient(135deg, rgba(255,147,1,0.95), rgba(33,150,243,0.85)), url('https://craftohtml.themezaa.com/images/demo-corporate-services-title-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .floating-shapes::before,
+        .floating-shapes::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,147,1,0.1);
+            animation: float 8s ease-in-out infinite;
+        }
+        .floating-shapes::before {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+        .floating-shapes::after {
+            width: 200px;
+            height: 200px;
+            bottom: -5%;
+            right: -5%;
+            animation-delay: 4s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-30px) rotate(10deg); opacity: 1; }
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffeb3b, #ff9301);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        .network-stats-overlay {
+            min-height: 400px;
+            position: relative;
+            background: url('images/bg_one.png') no-repeat center;
+            background-size: contain;
+        }
+        .stat-circle {
+            max-width: 180px;
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        .bg-gradient-orange {
+            background: linear-gradient(45deg, #ff9301, #ffb74d) !important;
+        }
+        .bg-gradient-blue {
+            background: linear-gradient(45deg, #2196f3, #64b5f6) !important;
+        }
+        .bg-gradient-green {
+            background: linear-gradient(45deg, #4caf50, #81c784) !important;
+        }
+        .bg-gradient-yellow {
+            background: linear-gradient(45deg, #ffeb3b, #fff176) !important;
+        }
+        .bg-gradient-yellow-light {
+            background: linear-gradient(45deg, #fff9c4, #fff59d) !important;
+        }
+        .bg-gradient-pink {
+            background: linear-gradient(45deg, #e91e63, #f06292) !important;
+        }
+        .service-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .stat-box {
+            transition: transform 0.3s ease;
+        }
+        .stat-box:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .network-hero {
+                min-height: 70vh;
+                padding: 2rem 0;
+            }
+            .network-hero h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+            .network-hero p {
+                font-size: 16px !important;
+                width: 90% !important;
+            }
+            .floating-shapes::before,
+            .floating-shapes::after {
+                display: none;
+            }
+            .stat-circle {
+                max-width: 140px;
+                padding: 1rem;
+            }
+            .network-stats-overlay {
+                min-height: 300px;
+            }
+        }
+        
+        /* Tablet Responsiveness */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .network-hero h1 {
+                font-size: 3rem !important;
+            }
+        }
+    </style>
 </head>
 
 <body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#242E45">
@@ -42,14 +162,16 @@
        <?php include 'includes/navbar.php'; ?>
         <!-- end header -->
         <!-- start page title -->
-            <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0" data-parallax-background-ratio="0.5" style="background-image: url(https://via.placeholder.com/1920x1080)">
-                <div class="opacity-extra-medium bg-blue-whale"></div>
+            <section class="network-hero top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0" data-parallax-background-ratio="0.5">
+                <div class="floating-shapes"></div>
                 <div class="container">
                     <div class="row align-items-center justify-content-center small-screen">
-                        <div class="col-lg-8 position-relative text-center page-title-extra-large" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">About us</h1>
+                        <div class="col-lg-10 position-relative text-center page-title-extra-large" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <h1 class="m-auto text-white text-shadow-double-large fw-800 ls-minus-2px mb-3">Our <span class="text-gradient">Network</span> & Capabilities</h1>
+                            <p class="text-white fs-18 fw-400 mb-4 w-80 mx-auto opacity-9">Strategically positioned across India with 100+ cities, 1000+ successful assignments, and 24 trusted B2B partners</p>
+                            <a href="#down-section" class="btn btn-large btn-white btn-round-edge fw-600 text-dark-gray">Explore Our Network</a>
                         </div>
-                        <div class="down-section text-center" data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <div class="down-section text-center mt-4" data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <a href="#down-section" class="section-link">
                                 <div class="text-white">
                                     <i class="feather icon-feather-chevron-down icon-very-medium"></i>
@@ -65,67 +187,109 @@
                 <div class="container overlap-gap-section"> 
                     <div class="row align-items-end justify-content-center mb-5 md-mb-40px text-center text-md-start">                    
                         <div class="col-xl-5 col-lg-6 col-md-10 md-mb-20px text-center text-lg-start" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">About company</span>
-                            <h3 class="text-dark-gray fw-700 mb-0 ls-minus-1px">Powerful agency for corporate business.</h3>
+                            <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Our Network</span>
+                            <h3 class="text-dark-gray fw-700 mb-0 ls-minus-1px">More than 100 plus Cities, with 1000 plus assignments & 24 B2B Partner</h3>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-10 offset-xl-1 text-center text-lg-start last-paragraph-no-margin">
-                            <p class="w-90 xl-w-100" data-anime='{ "el": "lines", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>We strive to develop real-world web solutions that are ideal for small to large projects with bespoke project requirements. we compelling web, <span class="fw-600 text-dark-gray text-decoration-line-bottom">which are the right-fit for your target.</span></p>
+                            <p class="w-90 xl-w-100" data-anime='{ "el": "lines", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>We have strategically positioned ourselves across <span class="fw-600 text-dark-gray text-decoration-line-bottom">many affiliates across India</span> to deliver comprehensive marketing solutions. Our network spans over 100+ cities with successful execution of 1000+ assignments through our 24 B2B partners.</p>
                         </div>
                     </div>
-                    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 row-cols-sm-2 justify-content-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden md-mb-20px">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
+                    <!-- start network statistics section -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-12 text-center">
+                            <div class="row align-items-center">
+                                <!-- Network Map Section -->
+                                <div class="col-lg-6 mb-4">
+                                    <div class="position-relative">
+                                        <div class="network-stats-overlay">
+                                            <div class="stat-item position-absolute" style="top: 20%; left: 20%;">
+                                                <div class="stat-circle bg-gradient-orange text-white p-3 border-radius-50px">
+                                                    <span class="fw-700 fs-16">100+</span><br>
+                                                    <small class="fs-12">Projects successfully executed in Last Financial Year</small>
+                                                </div>
+                                            </div>
+                                            <div class="stat-item position-absolute" style="bottom: 30%; left: 10%;">
+                                                <div class="stat-circle bg-gradient-blue text-white p-3 border-radius-50px">
+                                                    <span class="fw-700 fs-16">Cost Efficient Agency</span>
+                                                </div>
+                                            </div>
+                                            <div class="stat-item position-absolute" style="top: 40%; right: 20%;">
+                                                <div class="stat-circle bg-gradient-green text-white p-3 border-radius-50px">
+                                                    <span class="fw-700 fs-16">We Value relationship with our Clients</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Trusted company</span>
-                                    <p>We deliver email marketing campaigns to audience.</p>
+                                
+                                <!-- Sectors and Services -->
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <!-- Our Sectors -->
+                                        <div class="col-6">
+                                            <h4 class="text-dark-gray fw-700 mb-3 bg-light-gray p-3 border-radius-6px">OUR SECTORS</h4>
+                                            <ul class="list-unstyled">
+                                                <li class="mb-2 p-2 bg-gradient-yellow text-white border-radius-4px">BTL Advertisement</li>
+                                                <li class="mb-2 p-2 bg-dark-gray text-white border-radius-4px">Marketing Research</li>
+                                                <li class="mb-2 p-2 bg-dark-gray text-white border-radius-4px">Audits</li>
+                                                <li class="mb-2 p-2 bg-gradient-yellow-light text-dark-gray border-radius-4px">Contractual Staffing</li>
+                                                <li class="mb-2 p-2 bg-dark-gray text-white border-radius-4px">Home to Home</li>
+                                                <li class="mb-2 p-2 bg-gradient-yellow text-dark-gray border-radius-4px">Retail & Visual Merchandising</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <!-- Our Services -->
+                                        <div class="col-6">
+                                            <h4 class="text-dark-gray fw-700 mb-3 bg-light-gray p-3 border-radius-6px">OUR SERVICES</h4>
+                                            <div class="services-grid">
+                                                <div class="service-item mb-3 p-3 bg-gradient-yellow text-dark-gray border-radius-6px">
+                                                    <i class="bi bi-lightbulb icon-medium mb-2"></i>
+                                                    <span class="fw-600 d-block">Idea & Planning</span>
+                                                </div>
+                                                <div class="service-item mb-3 p-3 bg-dark-gray text-white border-radius-6px">
+                                                    <i class="bi bi-play-circle icon-medium mb-2"></i>
+                                                    <span class="fw-600 d-block">Activations</span>
+                                                </div>
+                                                <div class="service-item mb-3 p-3 bg-gradient-blue text-white border-radius-6px">
+                                                    <i class="bi bi-search icon-medium mb-2"></i>
+                                                    <span class="fw-600 d-block">Audit & Survey</span>
+                                                </div>
+                                                <div class="service-item mb-3 p-3 bg-gradient-pink text-white border-radius-6px">
+                                                    <i class="bi bi-rocket icon-medium mb-2"></i>
+                                                    <span class="fw-600 d-block">Product Launches</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden md-mb-20px">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Professional work</span>
-                                    <p>We also help our clients with social media strategy.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden xs-mb-20px">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Award winning</span>
-                                    <p>We believe in challenges so we have made challenges.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end features box item -->
-                        <!-- start features box item -->
-                        <div class="col custom-icon-with-text-style-02">
-                            <div class="feature-box p-6 last-paragraph-no-margin overflow-hidden">
-                                <div class="feature-box-icon">
-                                    <img class="custom-image-icon mb-20px" src="https://via.placeholder.com/60x60" alt="" />
-                                </div>
-                                <div class="feature-box-content">
-                                    <span class="d-block fs-19 fw-700 text-dark-gray mb-5px">Help any time</span>
-                                    <p>We never fail for support for your business anywhere.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end features box item -->
                     </div>
+                    <!-- end network statistics section -->
+                    
+                    <!-- start depth and breadth section -->
+                    <div class="row justify-content-center text-center pt-5">
+                        <div class="col-12">
+                            <h2 class="text-dark-gray fw-700 mb-4 ls-minus-1px">DEPTH AND BREADTH OF SERVICES PAN INDIA</h2>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 mb-4">
+                                    <div class="stat-box p-4">
+                                        <h3 class="text-base-color fw-700 mb-2">Reach</h3>
+                                        <h1 class="text-base-color fw-900 mb-2" style="font-size: 4rem;">300+</h1>
+                                        <p class="text-dark-gray fw-600 fs-18">TOWNS</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="stat-box p-4">
+                                        <h3 class="text-base-color fw-700 mb-2">Resources</h3>
+                                        <h1 class="text-base-color fw-900 mb-2" style="font-size: 4rem;">500+</h1>
+                                        <p class="text-dark-gray fw-600 fs-18">TEAM MEMBERS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end depth and breadth section -->
                 </div>
             </section>
             <!-- end section -->
@@ -139,207 +303,10 @@
                                     <i class="bi bi-chat-text icon-extra-medium text-base-color"></i>
                                 </div>
                                 <div class="feature-box-content last-paragraph-no-margin text-dark-gray text-uppercase fs-15 fw-700 ls-05px">
-                                    Let's make something great work together. <a href="demo-corporate-contact.html" class="text-base-color text-decoration-line-bottom-medium border-1">Got a project in mind?</a>
+                                    Let's make something great work together. <a href="contact-us.php" class="text-base-color text-decoration-line-bottom-medium border-1">Contact Us</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <!-- end section -->
-            <!-- start section -->
-            <section class="position-relative overflow-hidden">
-                <div class="container">
-                    <div class="row justify-content-center align-items-center mb-3">
-                        <div class="col-xl-5 col-lg-6 md-mb-14 sm-mb-18 xs-mb-23 position-relative" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 800, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <div class="w-75 sm-w-80" data-animation-delay="200" data-shadow-animation="true" data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)">
-                                <img src="https://via.placeholder.com/600x710" alt="" class="border-radius-6px w-100">
-                                <div class="position-absolute top-30px z-index-8 left-minus-90px lg-left-minus-25px sm-left-minus-0px lg-w-30">
-                                    <img src="images/demo-corporate-about-01.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="w-55 overflow-hidden position-absolute right-15px xs-w-55 bottom-minus-50px" data-shadow-animation="true" data-animation-delay="100" data-bottom-top="transform: translateY(20px)" data-top-bottom="transform: translateY(-20px)">
-                                <img src="https://via.placeholder.com/600x633" alt="" class="border-radius-6px box-shadow-quadruple-large w-100" />
-                            </div>
-                        </div>
-                        <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-lg-start" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 800, "delay": 150, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <div class="swiper position-relative magic-cursor" data-slider-options='{ "autoHeight": true, "loop": true, "allowTouchMove": true, "autoplay": { "delay": 4000, "disableOnInteraction": false }, "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }, "effect": "slide" }'>
-                                <div class="swiper-wrapper mb-10px">
-                                    <!-- start text slider item -->
-                                    <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company mission</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">We help to business growth and solution.</h3>
-                                        <p class="w-95 xl-w-100">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been industry's standard dummy text ever since the when an unknown adipiscing elit do eiusmod tempor incididunt ut labore printer took and scrambled it specimen book.</p>
-                                    </div>
-                                    <!-- end text slider item -->
-                                    <!-- start text slider item -->
-                                    <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company vision</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">A business plan and performance ideas.</h3>
-                                        <p class="w-95 xl-w-100">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been industry's standard dummy text ever since the when an unknown adipiscing elit do eiusmod tempor incididunt ut labore printer took and scrambled it specimen book.</p>
-                                    </div>
-                                    <!-- end text slider item -->
-                                    <!-- start text slider item -->
-                                    <div class="swiper-slide">
-                                        <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Company value</span>
-                                        <h3 class="text-dark-gray fw-700 ls-minus-1px mb-20px">Make the creative solutions for business.</h3>
-                                        <p class="w-95 xl-w-100">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been industry's standard dummy text ever since the when an unknown adipiscing elit do eiusmod tempor incididunt ut labore printer took and scrambled it specimen book.</p>
-                                    </div>
-                                    <!-- end text slider item -->
-                                </div> 
-                                <div class="d-flex justify-content-center justify-content-lg-start">
-                                    <!-- start slider navigation -->
-                                    <div class="slider-one-slide-prev-1 swiper-button-prev slider-navigation-style-04 border border-color-extra-medium-gray bg-white"><i class="bi bi-arrow-left-short icon-very-medium text-dark-gray"></i></div>
-                                    <div class="slider-one-slide-next-1 swiper-button-next slider-navigation-style-04 border border-color-extra-medium-gray bg-white"><i class="bi bi-arrow-right-short icon-very-medium text-dark-gray"></i></div>
-                                    <!-- end slider navigation --> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src="https://via.placeholder.com/655x590" class="position-absolute bottom-minus-50px right-minus-50px z-index-minus-1" data-bottom-top="transform: rotate(0deg) translateY(0)" data-top-bottom="transform:rotate(-15deg) translateY(0)" alt=""/>
-            </section>
-            <!-- end section -->
-            <!-- start section -->
-            <section class="bg-gradient-quartz-white border-radius-6px"> 
-                <div class="container">
-                    <div class="row justify-content-center mb-3">
-                        <div class="col-xl-5 col-md-7 col-lg-6 col-sm-8 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <h3 class="text-dark-gray fw-700 ls-minus-1px">Committed staff are ready to help you</h3>
-                        </div>
-                    </div>
-                    <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px md-mb-30px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Jeremy dupont</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Director</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.twitter.com/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-twitter icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->  
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px md-mb-30px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Jessica dover</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Founder</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.linkedin.com/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-linkedin-in icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->   
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px xs-mb-30px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Matthew taylor</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Manager</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.behance.net/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-behance icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->   
-                        <!-- start team member item --> 
-                        <div class="col team-style-08 border-radius-6px">
-                            <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                                <img src="https://via.placeholder.com/600x755" alt="" />
-                                <figcaption class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                                    <div class="w-100">
-                                        <span class="team-member-name fw-500 text-white d-block">Johncy parker</span>
-                                        <span class="member-designation fs-15 lh-20 text-white d-block">Manager</span>
-                                    </div>
-                                    <div class="social-icon d-flex flex-column flex-shrink-1">
-                                        <a href="https://www.facebook.com/" target="_blank" class="text-dark-gray bg-white"><i class="fa-brands fa-facebook-f icon-small"></i></a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <!-- end team member item -->   
-                    </div>
-                </div>
-            </section>
-            <!-- end section -->
-            <!-- start section -->
-            <section class="pt-0">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-5 col-lg-6 text-center mb-1" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                            <span class="text-dark-gray fw-700 fs-15 text-uppercase border-1 pb-5px border-bottom border-color-extra-medium-gray text-dark-gray">Join the 10,000+ companies using crafto</span>
-                        </div>
-                    </div>
-                    <div class="row position-relative clients-style-08 mt-25px" data-anime='{ "translateX": [0, 0], "opacity": [0,1], "duration": 800, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <div class="col swiper text-center feather-shadow" data-slider-options='{ "slidesPerView": 2, "spaceBetween":0, "speed": 3000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false, "pauseOnMouseEnter": false}, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 5 }, "768": { "slidesPerView": 3 }, "576": { "slidesPerView": 2 } }, "effect": "slide" }'>
-                            <div class="swiper-wrapper marquee-slide">
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-walmart-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-netflix-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-invision-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-yahoo-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-amazon-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-walmart-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-netflix-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-invision-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-yahoo-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                                <!-- start client item -->
-                                <div class="swiper-slide">
-                                    <a href="#"><img src="images/logo-invision-dark-blue.svg" alt="" /></a>
-                                </div>
-                                <!-- end client item -->
-                            </div> 
-                        </div>  
                     </div>
                 </div>
             </section>
